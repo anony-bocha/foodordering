@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.product_name }}</title>
+</head>
+<body>
+    <h1>{{ product.product_name }}</h1>
+    <p>{{ product.product_description }}</p>
+    <p><strong>Price:</strong> ₹{{ product.product_price }}</p>
+    <p><del>₹{{ product.product_demo_price }}</del></p>
+
+    {% if product.images.all %}
+        <div>
+            {% for image in product.images.all %}
+                <img src="{{ image.product_images.url }}" width="200px" alt="{{ product.product_name }}">
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <a href="{% url 'product_list' %}">← Back to Products</a>
+</body>
+</html>

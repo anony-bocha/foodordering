@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<body>
+    <h1>Available Products</h1>
+    
+    {% for product in products %}
+        <div style="margin-bottom: 20px;">
+            <!-- Link the product name to its detail page -->
+            <h2>
+                <a href="{% url 'product_detail' slug=product.product_slug %}">
+                    {{ product.product_name }}
+                </a>
+            </h2>
+
+            <!-- Show a short preview of the description -->
+            <p>{{ product.product_description|truncatechars:100 }}</p>
+
+            <!-- Show price -->
+            <p><strong>₹{{ product.product_price }}</strong></p>
+
+            <hr>
+        </div>
+    {% empty %}
+        <p>No products found.</p>
+    {% endfor %}
+</body>
+</html>

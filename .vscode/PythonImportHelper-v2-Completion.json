@@ -397,15 +397,6 @@
         "documentation": {}
     },
     {
-        "label": "uuid",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "uuid",
-        "description": "uuid",
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
         "label": "django.db.models.deletion",
         "kind": 6,
         "isExtraImport": true,
@@ -495,43 +486,52 @@
         "documentation": {}
     },
     {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.contrib",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.contrib",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.contrib",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.apps",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.apps",
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
         "documentation": {}
     },
     {
@@ -540,6 +540,78 @@
         "description": "products.models",
         "isExtraImport": true,
         "detail": "products.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "products.models",
+        "description": "products.models",
+        "isExtraImport": true,
+        "detail": "products.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "products.models",
+        "description": "products.models",
+        "isExtraImport": true,
+        "detail": "products.models",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -592,6 +664,22 @@
     },
     {
         "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -1817,10 +1905,55 @@
     {
         "label": "Migration",
         "kind": 6,
+        "importPath": ".trunk.tmp.trunk.23hpmou.cart.migrations.0002_order_orderitem",
+        "description": ".trunk.tmp.trunk.23hpmou.cart.migrations.0002_order_orderitem",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"cart\", \"0001_initial\"),\n        (\"products\", \"0002_alter_product_created_at_alter_product_update_at_and_more\"),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name=\"Order\",\n            fields=[\n                (",
+        "detail": ".trunk.tmp.trunk.23hpmou.cart.migrations.0002_order_orderitem",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
         "importPath": ".trunk.tmp.trunk.2otupex.products.migrations.0001_initial",
         "description": ".trunk.tmp.trunk.2otupex.products.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='product',\n            fields=[\n                ('update_at', models.DateField(auto_created=True)),\n                ('created_at', models.DateField(auto_created=True)),",
         "detail": ".trunk.tmp.trunk.2otupex.products.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "CartItem",
+        "kind": 6,
+        "importPath": ".trunk.tmp.trunk.e2ylfvc.cart.models",
+        "description": ".trunk.tmp.trunk.e2ylfvc.cart.models",
+        "peekOfCode": "class CartItem(models.Model):\n    session_key = models.CharField(max_length=100)\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n    quantity = models.PositiveIntegerField(default=1)\n    def total_price(self):\n        return self.product.product_price * self.quantity\n    def __str__(self):\n        return f\"{self.product.product_name} ({self.quantity})\"\nclass Order(models.Model):\n    session_key = models.CharField(max_length=100)",
+        "detail": ".trunk.tmp.trunk.e2ylfvc.cart.models",
+        "documentation": {}
+    },
+    {
+        "label": "Order",
+        "kind": 6,
+        "importPath": ".trunk.tmp.trunk.e2ylfvc.cart.models",
+        "description": ".trunk.tmp.trunk.e2ylfvc.cart.models",
+        "peekOfCode": "class Order(models.Model):\n    session_key = models.CharField(max_length=100)\n    customer_name = models.CharField(max_length=100)\n    customer_email = models.EmailField()\n    customer_address = models.TextField()\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"Order {self.id} by {self.customer_name}\"\nclass OrderItem(models.Model):\n    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name=\"items\")",
+        "detail": ".trunk.tmp.trunk.e2ylfvc.cart.models",
+        "documentation": {}
+    },
+    {
+        "label": "OrderItem",
+        "kind": 6,
+        "importPath": ".trunk.tmp.trunk.e2ylfvc.cart.models",
+        "description": ".trunk.tmp.trunk.e2ylfvc.cart.models",
+        "peekOfCode": "class OrderItem(models.Model):\n    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name=\"items\")\n    product = models.ForeignKey(\"products.Product\", on_delete=models.CASCADE)\n    quantity = models.PositiveIntegerField()\n    price = models.IntegerField()\n    def __str__(self):\n        return f\"{self.product.product_name} x {self.quantity}\"",
+        "detail": ".trunk.tmp.trunk.e2ylfvc.cart.models",
+        "documentation": {}
+    },
+    {
+        "label": "CheckoutForm",
+        "kind": 6,
+        "importPath": ".trunk.tmp.trunk.h2delil.cart.forms",
+        "description": ".trunk.tmp.trunk.h2delil.cart.forms",
+        "peekOfCode": "class CheckoutForm(forms.Form):\n    customer_name = forms.CharField(max_length=100)\n    customer_email = forms.EmailField()\n    customer_address = forms.CharField(widget=forms.Textarea)",
+        "detail": ".trunk.tmp.trunk.h2delil.cart.forms",
         "documentation": {}
     },
     {
@@ -1833,6 +1966,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "cart.migrations.0002_order_orderitem",
+        "description": "cart.migrations.0002_order_orderitem",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('cart', '0001_initial'),\n        ('products', '0002_alter_product_created_at_alter_product_update_at_and_more'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Order',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "cart.migrations.0002_order_orderitem",
+        "documentation": {}
+    },
+    {
         "label": "CartConfig",
         "kind": 6,
         "importPath": "cart.apps",
@@ -1842,11 +1984,38 @@
         "documentation": {}
     },
     {
+        "label": "CheckoutForm",
+        "kind": 6,
+        "importPath": "cart.forms",
+        "description": "cart.forms",
+        "peekOfCode": "class CheckoutForm(forms.Form):\n    customer_name = forms.CharField(max_length=100)\n    customer_email = forms.EmailField()\n    customer_address = forms.CharField(widget=forms.Textarea)",
+        "detail": "cart.forms",
+        "documentation": {}
+    },
+    {
         "label": "CartItem",
         "kind": 6,
         "importPath": "cart.models",
         "description": "cart.models",
-        "peekOfCode": "class CartItem(models.Model):\n    session_key = models.CharField(max_length=100)\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n    quantity = models.PositiveIntegerField(default=1)\n    def total_price(self):\n        return self.product.product_price * self.quantity\n    def __str__(self):\n        return f\"{self.product.product_name} ({self.quantity})\"",
+        "peekOfCode": "class CartItem(models.Model):\n    session_key = models.CharField(max_length=100)\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n    quantity = models.PositiveIntegerField(default=1)\n    def total_price(self):\n        return self.product.product_price * self.quantity\n    def __str__(self):\n        return f\"{self.product.product_name} ({self.quantity})\"\nclass Order(models.Model):\n    session_key = models.CharField(max_length=100)",
+        "detail": "cart.models",
+        "documentation": {}
+    },
+    {
+        "label": "Order",
+        "kind": 6,
+        "importPath": "cart.models",
+        "description": "cart.models",
+        "peekOfCode": "class Order(models.Model):\n    session_key = models.CharField(max_length=100)\n    customer_name = models.CharField(max_length=100)\n    customer_email = models.EmailField()\n    customer_address = models.TextField()\n    created_at = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"Order {self.id} by {self.customer_name}\"\nclass OrderItem(models.Model):\n    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')",
+        "detail": "cart.models",
+        "documentation": {}
+    },
+    {
+        "label": "OrderItem",
+        "kind": 6,
+        "importPath": "cart.models",
+        "description": "cart.models",
+        "peekOfCode": "class OrderItem(models.Model):\n    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')\n    product = models.ForeignKey('products.Product', on_delete=models.CASCADE)\n    quantity = models.PositiveIntegerField()\n    price = models.IntegerField()\n    def __str__(self):\n        return f\"{self.product.product_name} x {self.quantity}\"",
         "detail": "cart.models",
         "documentation": {}
     },
@@ -1857,6 +2026,42 @@
         "description": "cart.urls",
         "peekOfCode": "urlpatterns = [\n    path('add/<uuid:product_id>/', views.add_to_cart, name='add_to_cart'),\n    path('', views.view_cart, name='view_cart'),\n]",
         "detail": "cart.urls",
+        "documentation": {}
+    },
+    {
+        "label": "checkout",
+        "kind": 2,
+        "importPath": "cart.views",
+        "description": "cart.views",
+        "peekOfCode": "def checkout(request):\n    session_key = request.session.session_key\n    cart_items = CartItem.objects.filter(session_key=session_key)\n    if request.method == 'POST':\n        form = CheckoutForm(request.POST)\n        if form.is_valid():\n            order = Order.objects.create(\n                session_key=session_key,\n                customer_name=form.cleaned_data['customer_name'],\n                customer_email=form.cleaned_data['customer_email'],",
+        "detail": "cart.views",
+        "documentation": {}
+    },
+    {
+        "label": "order_success",
+        "kind": 2,
+        "importPath": "cart.views",
+        "description": "cart.views",
+        "peekOfCode": "def order_success(request):\n    return render(request, 'cart/order_success.html')\ndef add_to_cart(request, product_id):\n    session_key = request.session.session_key\n    if not session_key:\n        request.session.create()\n        session_key = request.session.session_key\n    product = get_object_or_404(Product, uid=product_id)\n    cart_item, created = CartItem.objects.get_or_create(session_key=session_key, product=product)\n    if not created:",
+        "detail": "cart.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_to_cart",
+        "kind": 2,
+        "importPath": "cart.views",
+        "description": "cart.views",
+        "peekOfCode": "def add_to_cart(request, product_id):\n    session_key = request.session.session_key\n    if not session_key:\n        request.session.create()\n        session_key = request.session.session_key\n    product = get_object_or_404(Product, uid=product_id)\n    cart_item, created = CartItem.objects.get_or_create(session_key=session_key, product=product)\n    if not created:\n        cart_item.quantity += 1\n        cart_item.save()",
+        "detail": "cart.views",
+        "documentation": {}
+    },
+    {
+        "label": "view_cart",
+        "kind": 2,
+        "importPath": "cart.views",
+        "description": "cart.views",
+        "peekOfCode": "def view_cart(request):\n    session_key = request.session.session_key\n    cart_items = CartItem.objects.filter(session_key=session_key)\n    total = sum(item.total_price() for item in cart_items)\n    return render(request, 'cart/cart.html', {'cart_items': cart_items, 'total': total})",
+        "detail": "cart.views",
         "documentation": {}
     },
     {

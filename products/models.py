@@ -17,7 +17,7 @@ class Product(BaseModel):
     product_description = models.TextField()
     product_price = models.IntegerField(default=0)
     product_demo_price = models.IntegerField(default=0)
-
+    
     def __str__(self):
         return self.product_name
 
@@ -33,4 +33,4 @@ class ProductMetaInformation(BaseModel):
 # Product Images
 class ProductImages(BaseModel):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images")
-    product_images = models.ImageField(upload_to="products")
+    product_images = models.ImageField(upload_to='products/', blank=True, null=True)

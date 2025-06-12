@@ -1,8 +1,41 @@
 {% extends 'base.html' %}
+{% block title %}Checkout{% endblock %}
 
-<h2>Checkout</h2>
-<form method="POST">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Place Order</button>
+{% block content %}
+<h2 class="mb-4">Checkout</h2>
+
+<form method="POST" class="mb-4">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Place Order</button>
 </form>
+
+<h3>Your Cart</h3>
+{% if cart_items %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart_items %}
+        <tr>
+            <td>{{ item.product.product_name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>₹{{ item.product.product_price }}</td>
+            <td>₹{{ item.total_price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p><strong>Total:</strong> ₹{{ total }}</p>
+
+{% else %}
+<p>Your cart is empty.</p>
+{% endif %}
+{% endblock %}

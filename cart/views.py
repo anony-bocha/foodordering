@@ -47,14 +47,30 @@ def add_to_cart(request, product_id):
     
     return redirect('view_cart')
 
+from django.shortcuts import render
+from .models import CartItem
+
 def view_cart(request):
     session_key = request.session.session_key
+    if not session_key:
+        request.session.create()
+        session_key = request.session.session_key
+
     cart_items = CartItem.objects.filter(session_key=session_key)
     total = sum(item.total_price() for item in cart_items)
-    return render(request, 'cart/cart.html', {'cart_items': cart_items, 'total': total})
+
+    return render(request, 'cart/cart.html', {
+        'cart_items': cart_items,
+        'total': total
+    })
 def checkout(request):
     session_key = request.session.session_key
+    if not session_key:
+        request.session.create()
+        session_key = request.session.session_key
+
     cart_items = CartItem.objects.filter(session_key=session_key)
+    total = sum(item.total_price() for item in cart_items)
 
     if request.method == 'POST':
         form = CheckoutForm(request.POST)
@@ -77,6 +93,11 @@ def checkout(request):
     else:
         form = CheckoutForm()
 
-    return render(request, 'cart/checkout.html', {'form': form, 'cart_items': cart_items})
+    return render(request, 'cart/checkout.html', {
+        'form': form,
+        'cart_items': cart_items,
+        'total': total
+    })
+
 def order_success(request):
     return render(request, 'cart/order_success.html')

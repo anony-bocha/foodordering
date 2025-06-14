@@ -98,6 +98,24 @@ def checkout(request):
         'cart_items': cart_items,
         'total': total
     })
+def cart_update(request, product_id):
+    if request.method == 'POST':
+        product = get_object_or_404(Product, id=product_id)
+        cart = request.session.get('cart', {})
 
+        action = request.POST.get('action')
+        current_qty = cart.get(str(product_id), 0)
+
+        if action == 'increment':
+            cart[str(product_id)] = current_qty + 1
+        elif action == 'decrement':
+            if current_qty > 1:
+                cart[str(product_id)] = current_qty - 1
+            else:
+                cart.pop(str(product_id), None)
+
+        request.session['cart'] = cart
+
+    return redirect('cart_detail') 
 def order_success(request):
     return render(request, 'cart/order_success.html')

@@ -1,6 +1,6 @@
 from django.db import models
 from products.models import Product
-
+from django.contrib.auth.models import User
 class CartItem(models.Model):
     session_key = models.CharField(max_length=100)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)

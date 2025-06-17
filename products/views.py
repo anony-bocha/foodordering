@@ -1,6 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product
-from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.forms import UserCreationForm
+
+from django.contrib.auth import login
+
+from django.contrib import messages
+
 def home(request):
     return render(request, 'products/home.html')
 
@@ -12,10 +17,6 @@ def product_detail(request, slug):
     product = get_object_or_404(Product, product_slug=slug)
     return render(request, 'products/product_detail.html', {'product': product})
 
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login
-
-from django.contrib import messages
 
 def register(request):
     if request.method == 'POST':

@@ -1,7 +1,9 @@
+
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import CartItem, Order, OrderItem
 from .forms import CheckoutForm
 from products.models import Product
+from django.contrib import messages
 
 def view_cart(request):
     session_key = request.session.session_key
@@ -11,6 +13,8 @@ def view_cart(request):
 
     cart_items = CartItem.objects.filter(session_key=session_key)
     total = sum(item.total_price for item in cart_items)
+
+    request.session['cart_count'] = cart_items.count()
 
     return render(request, 'cart/cart.html', {
         'cart_items': cart_items,
@@ -29,6 +33,8 @@ def add_to_cart(request, product_id):
         cart_item.quantity += 1
         cart_item.save()
 
+    request.session['cart_count'] = CartItem.objects.filter(session_key=session_key).count()
+
     return redirect('view_cart')
 
 def checkout(request):
@@ -39,6 +45,8 @@ def checkout(request):
 
     cart_items = CartItem.objects.filter(session_key=session_key)
     total = sum(item.total_price for item in cart_items)
+
+    request.session['cart_count'] = cart_items.count()
 
     if request.method == 'POST':
         form = CheckoutForm(request.POST)
@@ -57,6 +65,8 @@ def checkout(request):
                     price=item.product.product_price
                 )
             cart_items.delete()
+            request.session['cart_count'] = 0
+            messages.success(request, "Your order has been placed successfully!")
             return redirect('order_success')
     else:
         form = CheckoutForm()
@@ -87,6 +97,10 @@ def cart_update(request, product_id):
                     cart_item.save()
                 else:
                     cart_item.delete()
+            elif action == 'remove':
+                cart_item.delete()
+
+        request.session['cart_count'] = CartItem.objects.filter(session_key=session_key).count()
 
     return redirect('view_cart')
 

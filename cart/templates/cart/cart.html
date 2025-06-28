@@ -25,7 +25,13 @@
                 {% endwith %}
                 {{ item.product.product_name }}
             </td>
+            <td>
 
+             <form method="POST" action="{% url 'cart_update' item.product.uid %}" class="d-inline">
+            {% csrf_token %}
+            <button type="submit" name="action" value="remove" class="btn btn-danger btn-sm mt-1">Remove</button>
+            </form>
+            </td>
             <td>
                 <form method="POST" action="{% url 'cart_update' item.product.uid %}">
                     {% csrf_token %}

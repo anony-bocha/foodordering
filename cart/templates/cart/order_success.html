@@ -1,5 +1,11 @@
-{% extends 'base.html' %}
 
-<h2 class="text-3xl font-bold text-green-600">Thank you!</h2>
-<p>Your order has been placed successfully.</p>
-<a href="{% url 'product_list' %}">Continue Shopping</a>
+{% extends 'base.html' %}
+{% block title %}Order Success{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h2 class="text-3xl font-bold text-green-600">Thank you!</h2>
+    <p>Your order has been placed successfully.</p>
+    <a href="{% url 'product_list' %}" class="btn btn-primary mt-3">Continue Shopping</a>
+</div>
+{% endblock %}

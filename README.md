@@ -27,7 +27,7 @@ A modern, responsive web application for ordering food online, built with Django
 
 | login                   | register                       |
 |--------------------------------|--------------------------------|
-| ![Product List](screenshots/login.png) | ![Cart Page](screenshots/register.png) |
+| ![Product List](screenshots/login.png) | ![Cart Pageprint()](screenshots/register.png) |
 
 | Checkout Page                  | Order Success                   |
 |-------------------------------|--------------------------------|

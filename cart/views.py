@@ -5,6 +5,14 @@ from .forms import CheckoutForm
 from products.models import Product
 from django.contrib import messages
 
+
+def cart_count(request):
+    session_key = request.session.session_key
+    if not session_key:
+        return {'cart_count': 0}
+    count = CartItem.objects.filter(session_key=session_key).count()
+    return {'cart_count': count}
+
 def view_cart(request):
     session_key = request.session.session_key
     if not session_key:

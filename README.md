@@ -64,7 +64,7 @@ This project is licensed under the MIT License.
 
 For any inquiries or freelance opportunities, please contact:
 
-- Email: [yse.com]
+- Email: [semateyonatan@gmail.com]
 - GitHub: [anony-bocha](https://github.com/anony-bocha)
 
 ### Setup Steps

@@ -38,10 +38,14 @@
                 <td>
                     <form method="POST" action="{% url 'cart_update' item.product.uid %}">
                         {% csrf_token %}
-                        <div class="input-group" style="max-width: 120px;">
-                            <button type="submit" name="action" value="decrement" class="btn btn-outline-secondary" {% if item.quantity == 1 %}disabled{% endif %}>-</button>
-                            <input type="text" value="{{ item.quantity }}" class="form-control text-center" readonly>
-                            <button type="submit" name="action" value="increment" class="btn btn-outline-secondary">+</button>
+                        <div class="input-group" style="max-width: 120px;"><button type="submit" name="action" value="decrement" class="btn btn-outline-secondary btn-sm" {% if item.quantity == 1 %}disabled{% endif %}>
+                            <i class="bi bi-dash"></i>
+                        </button>
+                        <input type="text" value="{{ item.quantity }}" class="form-control text-center form-control-sm" readonly>
+                        <button type="submit" name="action" value="increment" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-plus"></i>
+                        </button>
+                        
                         </div>
                     </form>
                 </td>

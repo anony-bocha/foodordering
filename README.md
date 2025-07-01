@@ -42,6 +42,29 @@ A modern, responsive web application for ordering food online, built with Django
 - Python 3.8+  
 - Git  
 - Virtual Environment tool (venv)
+## 🗂️ Project Structure
+
+- `products/` - Handles product listing and management
+- `cart/` - Manages cart operations, checkout, and orders
+- `templates/` - HTML templates
+- `static/` - CSS, JS, and images
+- `media/` - Uploaded product images
+## 🚀 Usage
+
+- Visit `http://127.0.0.1:8000/` in your browser.
+- Register a new account or log in with your superuser account.
+- Browse products, add to cart, and proceed to checkout.
+- View your orders under "My Orders" after logging in.
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 📧 Contact
+
+For any inquiries or freelance opportunities, please contact:
+
+- Email: [yse.com]
+- GitHub: [anony-bocha](https://github.com/anony-bocha)
 
 ### Setup Steps
 
@@ -50,3 +73,18 @@ A modern, responsive web application for ordering food online, built with Django
    ```bash
    git clone https://github.com/anony-bocha/foodordering.git
    cd foodordering
+# Create and activate a virtual environment
+python -m venv env
+source env/bin/activate        # On Windows: env\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Apply migrations
+python manage.py migrate
+
+# Create a superuser to access the admin
+python manage.py createsuperuser
+
+# Run the server
+python manage.py runserver

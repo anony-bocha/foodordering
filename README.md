@@ -5,6 +5,7 @@
 A modern, responsive web application for ordering food online, built with Django and Bootstrap 5. This app provides a seamless user experience for browsing products, managing a shopping cart, and placing orders.
 
 ---
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-green?style=for-the-badge)](https://foodordering-kgwb.onrender.com)
 
 ## 🚀 Features
 

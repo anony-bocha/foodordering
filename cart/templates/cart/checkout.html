@@ -4,38 +4,41 @@
 {% block content %}
 <h2 class="mb-4">Checkout</h2>
 
-<form method="POST" class="mb-4">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Place Order</button>
-</form>
+<div class="row">
+  <div class="col-md-6">
+    <form method="POST" novalidate>
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="mb-3">
+          <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+          {{ field }}
+          {% if field.errors %}
+            <div class="text-danger small mt-1">{{ field.errors|striptags }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-success w-100">Place Order</button>
+    </form>
+  </div>
 
-<h3>Your Cart</h3>
-{% if cart_items %}
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Total</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in cart_items %}
-        <tr>
-            <td>{{ item.product.product_name }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>₹{{ item.product.product_price }}</td>
-            <td>₹{{ item.total_price }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
-<p><strong>Total:</strong> ₹{{ total }}</p>
-
-{% else %}
-<p>Your cart is empty.</p>
-{% endif %}
+  <div class="col-md-6">
+    <h4>Your Cart Summary</h4>
+    {% if cart_items %}
+    <ul class="list-group mb-3">
+      {% for item in cart_items %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ item.product.product_name }} (x{{ item.quantity }})
+        <span>₹{{ item.total_price }}</span>
+      </li>
+      {% endfor %}
+      <li class="list-group-item d-flex justify-content-between fw-bold">
+        Total
+        <span>₹{{ total }}</span>
+      </li>
+    </ul>
+    {% else %}
+    <p>Your cart is empty.</p>
+    {% endif %}
+  </div>
+</div>
 {% endblock %}

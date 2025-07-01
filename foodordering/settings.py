@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +26,7 @@ SECRET_KEY = "django-insecure-pg2ejq5w0(rc%iy$o3bkuxd-3a+w^o8kl*t6hz!m9n4+y&e*jz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -120,8 +121,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 STATIC_URL = "/static/"
+
+# This tells Django where to look for static files during development
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+# This is the folder where collectstatic will gather all static files for deployment
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 
 # Default primary key field type

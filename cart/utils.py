@@ -1,5 +1,6 @@
 from .models import CartItem
 
+
 def merge_carts(session_key, user):
     if not session_key or not user.is_authenticated:
         return
@@ -15,7 +16,7 @@ def merge_carts(session_key, user):
             existing_item.save()
         else:
             item.user = user
-            item.session_key = ''
+            item.session_key = ""
             item.save()
 
     # Delete all session cart items that are now merged or transferred

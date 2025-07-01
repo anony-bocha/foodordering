@@ -9,17 +9,31 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('products', '0002_alter_product_created_at_alter_product_update_at_and_more'),
+        ("products", "0002_alter_product_created_at_alter_product_update_at_and_more"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='CartItem',
+            name="CartItem",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('session_key', models.CharField(max_length=100)),
-                ('quantity', models.PositiveIntegerField(default=1)),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.product')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("session_key", models.CharField(max_length=100)),
+                ("quantity", models.PositiveIntegerField(default=1)),
+                (
+                    "product",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="products.product",
+                    ),
+                ),
             ],
         ),
     ]

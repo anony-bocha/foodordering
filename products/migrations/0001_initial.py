@@ -9,54 +9,98 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='product',
+            name="product",
             fields=[
-                ('update_at', models.DateField(auto_created=True)),
-                ('created_at', models.DateField(auto_created=True)),
-                ('uid', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('product_name', models.CharField(max_length=100)),
-                ('product_slug', models.SlugField(unique=True)),
-                ('product_description', models.TextField()),
-                ('product_price', models.IntegerField(default=0)),
-                ('product_demo_price', models.IntegerField(default=0)),
+                ("update_at", models.DateField(auto_created=True)),
+                ("created_at", models.DateField(auto_created=True)),
+                (
+                    "uid",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("product_name", models.CharField(max_length=100)),
+                ("product_slug", models.SlugField(unique=True)),
+                ("product_description", models.TextField()),
+                ("product_price", models.IntegerField(default=0)),
+                ("product_demo_price", models.IntegerField(default=0)),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
         migrations.CreateModel(
-            name='productImages',
+            name="productImages",
             fields=[
-                ('update_at', models.DateField(auto_created=True)),
-                ('created_at', models.DateField(auto_created=True)),
-                ('uid', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('product_images', models.ImageField(upload_to='products')),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='products.product')),
+                ("update_at", models.DateField(auto_created=True)),
+                ("created_at", models.DateField(auto_created=True)),
+                (
+                    "uid",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("product_images", models.ImageField(upload_to="products")),
+                (
+                    "product",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="images",
+                        to="products.product",
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
         migrations.CreateModel(
-            name='productMetaInformation',
+            name="productMetaInformation",
             fields=[
-                ('update_at', models.DateField(auto_created=True)),
-                ('created_at', models.DateField(auto_created=True)),
-                ('uid', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('quantity', models.CharField(blank=True, null=True)),
-                ('product_measuring', models.CharField(choices=[('KG', 'KG'), ('ML', 'ML'), ('L', 'L'), (None, None)], max_length=100, null=True)),
-                ('product_quantity', models.CharField(blank=True, null=True)),
-                ('is_restrict', models.BooleanField(default=False)),
-                ('restrict_quantity', models.IntegerField()),
-                ('product', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='meta_info', to='products.product')),
+                ("update_at", models.DateField(auto_created=True)),
+                ("created_at", models.DateField(auto_created=True)),
+                (
+                    "uid",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("quantity", models.CharField(blank=True, null=True)),
+                (
+                    "product_measuring",
+                    models.CharField(
+                        choices=[("KG", "KG"), ("ML", "ML"), ("L", "L"), (None, None)],
+                        max_length=100,
+                        null=True,
+                    ),
+                ),
+                ("product_quantity", models.CharField(blank=True, null=True)),
+                ("is_restrict", models.BooleanField(default=False)),
+                ("restrict_quantity", models.IntegerField()),
+                (
+                    "product",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="meta_info",
+                        to="products.product",
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]

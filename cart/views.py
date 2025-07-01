@@ -1,10 +1,8 @@
-
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import CartItem, Order, OrderItem
 from .forms import CheckoutForm
 from products.models import Product
 from django.contrib import messages
-
 
 def cart_count(request):
     session_key = request.session.session_key
@@ -43,7 +41,7 @@ def add_to_cart(request, product_id):
 
     request.session['cart_count'] = CartItem.objects.filter(session_key=session_key).count()
 
-    return redirect('view_cart')
+    return redirect('cart_detail')  # Fixed indentation and correct URL name
 
 def checkout(request):
     session_key = request.session.session_key
@@ -110,7 +108,7 @@ def cart_update(request, product_id):
 
         request.session['cart_count'] = CartItem.objects.filter(session_key=session_key).count()
 
-    return redirect('view_cart')
+    return redirect('cart_detail')  # Fixed URL name here
 
 def order_success(request):
     return render(request, 'cart/order_success.html')
